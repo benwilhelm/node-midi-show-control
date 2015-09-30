@@ -1,0 +1,25 @@
+{
+  "name": "node-midi-show-control",
+  "version": "0.1.0",
+  "description": "A wrapper around justinlatimer's node-midi, specifically implementing the Midi Show Control spec for controlling theatrical fixtures and automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benwilhelm/node-midi-show-control"
+  },
+  "keywords": [
+    "midi",
+    "midi",
+    "show",
+    "control"
+  ],
+  "author": "Ben Wilhelm <ben@doublebeamdesign.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benwilhelm/node-midi-show-control/issues"
+  },
+  "homepage": "https://github.com/benwilhelm/node-midi-show-control"
+}
