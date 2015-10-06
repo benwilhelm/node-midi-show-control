@@ -1,4 +1,3 @@
-# Midi Show Control
 This is a wrapper around Justin Latimer's [midi][node-midi] module, specifically implementing an interface for the [Midi Show Control][msc] spec for controlling theatrical fixtures and automation.
 
 [node-midi]: https://github.com/justinlatimer/node-midi
@@ -7,7 +6,6 @@ This is a wrapper around Justin Latimer's [midi][node-midi] module, specifically
 
 <!-- TOC depth:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [Midi Show Control](#midi-show-control)
 - [Please Note](#please-note)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
