@@ -1,6 +1,6 @@
 {
   "name": "midi-show-control",
-  "version": "1.0.0-beta",
+  "version": "1.0.0-beta.1",
   "description": "A wrapper around justinlatimer's node-midi, specifically implementing the Midi Show Control spec for controlling theatrical fixtures and automation",
   "main": "index.js",
   "scripts": {
