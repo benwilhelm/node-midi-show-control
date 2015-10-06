@@ -31,5 +31,19 @@ describe("util module", function() {
             util.dotNotatedIndex(map, "Sound.General").should.eql(0x10);
             done();
         })
+    });
+    
+    describe("messageIsMsc() method", function() {
+        
+        it("should return true for MSC method", function(done){
+            util.messageIsMsc(testMessage).should.be.true();
+            done();
+        });
+        
+        it("should return false for other messages", function(done) {
+            var message = [0x173, 0x02, 0x13];
+            util.messageIsMsc(message).should.be.false();
+            done();
+        })
     })
 })
