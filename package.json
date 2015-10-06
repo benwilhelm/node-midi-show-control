@@ -12,9 +12,10 @@
   },
   "keywords": [
     "midi",
-    "midi",
     "show",
-    "control"
+    "control",
+    "show-control",
+    "midi-show-control"
   ],
   "author": "Ben Wilhelm <ben@doublebeamdesign.com>",
   "license": "MIT",
@@ -23,8 +24,8 @@
   },
   "homepage": "https://github.com/benwilhelm/node-midi-show-control",
   "dependencies": {
-    "lodash": "^3.10.1",
-    "midi": "^0.9.4"
+    "lodash": "3.10.1",
+    "midi": "0.9.4"
   },
   "devDependencies": {
     "mocha": "^2.3.3",
