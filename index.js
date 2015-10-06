@@ -24,4 +24,12 @@ midi.mscOutput = function() {
     return output;
 }
 
+midi.getAvailableCommandFormats = function() {
+    return msc.getAvailableCommandFormats();
+}
+
+midi.getAvailableCommands = function() {
+    return msc.getAvailableCommands();
+}
+
 module.exports = midi;

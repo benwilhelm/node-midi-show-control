@@ -35,7 +35,7 @@ describe("mscOutput.sendMsc() method", function() {
             commandFormat: "machinery.general",
             command: "go",
             cue: "25.5",
-            cueList: "3.1",
+            cueList: 3.1, // should parse to string
             cuePath: "1.9"
         })
         spy.calledOnce.should.be.true();
