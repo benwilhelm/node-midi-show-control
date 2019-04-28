@@ -4,7 +4,7 @@
   "description": "A wrapper around justinlatimer's node-midi, specifically implementing the Midi Show Control spec for controlling theatrical fixtures and automation",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive -r ./test/_bootstrap.js --reporter dot -t 10000"
+    "test": "mocha --recursive --reporter dot -t 10000"
   },
   "repository": {
     "type": "git",
@@ -24,12 +24,10 @@
   },
   "homepage": "https://github.com/benwilhelm/node-midi-show-control",
   "dependencies": {
-    "lodash": "3.10.1",
-    "midi": "0.9.4"
+    "lodash": "3.10.1"
   },
   "devDependencies": {
-    "mocha": "^2.3.3",
-    "should": "^7.1.0",
-    "sinon": "^1.17.1"
+    "chai": "^4.2.0",
+    "mocha": "^2.3.3"
   }
 }

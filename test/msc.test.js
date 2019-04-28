@@ -1,99 +1,101 @@
-var should = require("should");
 var msc = require("../lib/msc");
+const expect = require('chai').expect
 
 describe("msc module", function() {
-    
+
     describe("commandFormatToHex() method", function(){
-        
-        it("should convert dot notation to hex integer", function(done) {
-            msc.commandFormatToHex("sound.general").should.eql(0x10);
-            msc.commandFormatToHex("lighting.general").should.eql(0x01);
-            msc.commandFormatToHex("all").should.eql(0x7F);
-            done();
+
+        it("should convert dot notation to hex integer", function() {
+            expect(msc.commandFormatToHex("sound.general")).to.equal(0x10);
+            expect(msc.commandFormatToHex("lighting.general")).to.equal(0x01);
+            expect(msc.commandFormatToHex("all")).to.equal(0x7F);
+
         });
 
     })
-    
+
     describe("hexToCommandFormat() method", function(){
-        
-        it("should convert hex integer to dot-notated command format", function(done){
-            msc.hexToCommandFormat(0x40).should.eql("projection.general");
-            msc.hexToCommandFormat(0x7F).should.eql("all");
-            done();
+
+        it("should convert hex integer to dot-notated command format", function(){
+            expect(msc.hexToCommandFormat(0x40)).to.equal("projection.general");
+            expect(msc.hexToCommandFormat(0x7F)).to.equal("all");
+
         });
 
     })
-    
+
     describe("commandToHex() method", function() {
-        
-        it("should convert plaintext command to hex integer", function(done){
-            msc.commandToHex("go").should.eql(0x01);
-            done();
+
+        it("should convert plaintext command to hex integer", function(){
+            expect(msc.commandToHex("go")).to.equal(0x01);
+
         })
     })
-    
+
     describe("hexToCommand() method", function() {
-        
-        it("should convert hex integer to plaintext command", function(done){
-            msc.hexToCommand(0x01).should.eql("go");
-            msc.hexToCommand(2).should.eql("stop");
-            done();
+
+        it("should convert hex integer to plaintext command", function(){
+            expect(msc.hexToCommand(0x01)).to.equal("go");
+            expect(msc.hexToCommand(2)).to.equal("stop");
+
         })
     });
-    
+
     describe("deviceIdToHex() method", function() {
-        
-        it("should convert plaintext deviceIds to integer", function(done){
-            msc.deviceIdToHex("all").should.eql(0x7F);
-            msc.deviceIdToHex("G7").should.eql(0x76);
-            msc.deviceIdToHex("G15").should.eql(0x7E);
-            msc.deviceIdToHex(15).should.eql(0x0F);
-            msc.deviceIdToHex(21).should.eql(0x15);
-            done();
+
+        it("should convert plaintext deviceIds to integer", function(){
+            expect(msc.deviceIdToHex("all")).to.equal(0x7F);
+            expect(msc.deviceIdToHex("G7")).to.equal(0x76);
+            expect(msc.deviceIdToHex("G15")).to.equal(0x7E);
+            expect(msc.deviceIdToHex(15)).to.equal(0x0F);
+            expect(msc.deviceIdToHex(21)).to.equal(0x15);
+
         });
-        
-        it("should throw errors for invalid inputs", function(done){
-            (function(){
+
+        it("should throw errors for invalid inputs", function(){
+            expect(function(){
                 msc.deviceIdToHex(-1);
-            }).should.throw(/must be between/i);
-            
-            (function(){
+            }).to.throw(/must be between/i);
+
+            expect(function(){
                 msc.deviceIdToHex(0x8F);
-            }).should.throw(/must be between/i);
-            
-            (function(){
+            }).to.throw(/must be between/i);
+
+            expect(function(){
                 msc.deviceIdToHex("foo");
-            }).should.throw(/invalid deviceId/i);
-            
-            (function(){
+            }).to.throw(/invalid deviceId/i);
+
+            expect(function(){
                 msc.deviceIdToHex("G25");
-            }).should.throw(/group numbers must be within/i)
-            
-            done();
+            }).to.throw(/group numbers must be within/i)
+
+
         })
     });
-    
+
     describe("hexToDeviceId() method", function() {
-        it("should convert integer to plaintext deviceId", function(done){
-            msc.hexToDeviceId(0x7F).should.eql("all");
-            msc.hexToDeviceId(0x76).should.eql("G7");
-            msc.hexToDeviceId(0x7E).should.eql("G15");
-            msc.hexToDeviceId(0x0F).should.eql(15);
-            msc.hexToDeviceId(0x15).should.eql(21);
-            done();
+        it("should convert integer to plaintext deviceId", function(){
+            expect(msc.hexToDeviceId(0x7F)).to.equal("all");
+            expect(msc.hexToDeviceId(0x76)).to.equal("G7");
+            expect(msc.hexToDeviceId(0x7E)).to.equal("G15");
+            expect(msc.hexToDeviceId(0x0F)).to.equal(15);
+            expect(msc.hexToDeviceId(0x15)).to.equal(21);
+
         })
 
-        it("should throw errors for invalid inputs", function(done){
-            (function(){
+        it("should throw errors for invalid inputs", function(){
+            expect(function(){
                 msc.hexToDeviceId(-1);
-            }).should.throw(/expects an integer between/i);
-            
-            (function(){
+            }).to.throw(/expects an integer between/i);
+
+            expect(function(){
                 msc.hexToDeviceId(0x8F);
-            }).should.throw(/expects an integer between/i);
-            
-            done();
+            }).to.throw(/expects an integer between/i);
+
+
         });
     });
-    
+
+
+
 })
